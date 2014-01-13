@@ -1,0 +1,67 @@
+html{
+	overflow:hidden;
+}
+
+/* style browsers that can handle css filters */
+
+.opcssfilters body img:not(.clear),
+.opcssfilters body h1:not(.clear),
+.opcssfilters body h2:not(.clear),
+.opcssfilters body h3:not(.clear),
+.opcssfilters body h4:not(.clear),
+.opcssfilters body h5:not(.clear),
+.opcssfilters body p:not(.clear),
+.opcssfilters body div:not(.clear),
+.opcssfilters body li:not(.clear){
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+
+.opcssfilters .cover{
+	opacity:.85;
+	background:#ffffff;
+}
+
+/* style browsers that can't handle css filters */
+
+.opno-cssfilters .cover{
+	background:#ffffff;
+	opacity:.95;
+}
+
+.opno-cssfilters body *:not(.clear){
+	filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=2); -ms-filter: 	"progid:DXImageTransform.Microsoft.Blur(pixelRadius=2)";
+}
+
+/* default styling */
+
+.cover{
+	position:fixed;
+	z-index:1001;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.landing-page-modal{
+	position:fixed;
+	top:30%;
+	left:50%;
+	margin-left:-400px;
+	width:800px;
+	z-index:2001;
+	text-align:center;
+}
+
+.landing-page-modal h1{
+	font-size:3em;
+	color:#000000;
+}
+
+.landing-page-modal h2{
+	color:#000000;
+}
