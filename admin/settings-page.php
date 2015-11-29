@@ -9,15 +9,14 @@ class OpaqueSettingPage{
 	/**
 	 * Constructor function
 	 *
-	 * @access  public
-	 * @since   0.1.0
+	 * @see add_action, add_filter
 	 */
 
 	public function __construct() {
 
-		add_action( 'admin_init', array($this, 'op_register_settings') );
-		add_action( 'admin_menu', array($this, 'op_options_page') );
-		add_filter( 'plugin_action_links_opaque-teaser/opaque-teaser.php', array($this, 'op_plugin_settings_link') );
+		add_action( 'admin_init', array( $this, 'op_register_settings' ) );
+		add_action( 'admin_menu', array( $this, 'op_options_page' ) );
+		add_filter( 'plugin_action_links_opaque-teaser/opaque-teaser.php', array( $this, 'op_plugin_settings_link' ) );
 
 	}
 
@@ -25,15 +24,14 @@ class OpaqueSettingPage{
 	/**
 	 * Register the settings
 	 *
-	 * @access  public
-	 * @since   0.1.0
+	 * @see register_setting
 	 */
-    function op_register_settings() {
+    public function op_register_settings() {
 
-    	register_setting( 'op_main_options', 'op_options', array($this, 'op_validate_options') );
-    	register_setting( 'op_main_options', 'op_text_options', array($this, 'op_validate_text_options') );
+    	register_setting( 'op_main_options', 'op_options', array( $this, 'op_validate_options' ) );
+    	register_setting( 'op_main_options', 'op_text_options', array( $this, 'op_validate_text_options' ) );
 
-    } // end op_register_settings()
+    }
 
 
 	/**
@@ -42,11 +40,19 @@ class OpaqueSettingPage{
 	 * @access  public
 	 * @since   0.1.0
 	 */
-    function op_options_page() {
+    public function op_options_page() {
 
-    	add_submenu_page( 'options-general.php', 'Opaque Teaser Settings', 'Teaser', 'manage_options', 'op_settings', array($this, 'op_settings_page') );
+    	add_submenu_page(
+    		'options-general.php',
+    		__( 'Opaque Teaser Settings', 'opaqueteaser' ),
+    		__( 'Opaque Teaser', 'opaqueteaser' ),
+    		'manage_options',
+    		'op_settings',
+    		array( $this, 'op_settings_page' )
+    	);
 
-    } // end op_options_page()
+    }
+
 
     /**
 	 * Generate the settings page
@@ -54,7 +60,7 @@ class OpaqueSettingPage{
 	 * @access  public
 	 * @since   0.1.0
 	 */
-    function op_settings_page() {
+    public function op_settings_page() {
     	global $op_options, $op_text_options;
 
     	// establish defaults if the settings haven't yet been set
@@ -66,8 +72,8 @@ class OpaqueSettingPage{
 		);
 
 		$op_text_options = array(
-			'header_text'			=> 'Coming Soon!',
-			'sub_text'				=> 'This site will be up and running in no time at all!',
+			'header_text'			=> __( 'Coming Soon!', 'opaqueteaser' ),
+			'sub_text'				=> __( 'This site will be up and running in no time at all!', 'opaqueteaser' ),
 			'custom_HTML'			=> '<h1>Custom Title</h1><h3>Custom Subtext</h3>',
 			'header_text_color'		=> '',	// coming soon
 			'header_text_font'		=> '',	// coming soon
@@ -237,7 +243,7 @@ class OpaqueSettingPage{
 	 * @access  public
 	 * @since   0.1.0
 	 */
-    function op_validate_options( $input ) {
+    public function op_validate_options( $input ) {
     	global $op_options, $op_text_options;
 
     	$settings = get_option( 'op_options', $op_options );
@@ -257,7 +263,7 @@ class OpaqueSettingPage{
 	 * @access  public
 	 * @since   0.1.0
 	 */
-    function op_validate_text_options( $input ) {
+    public function op_validate_text_options( $input ) {
     	global $op_options, $op_text_options;
 
     	$text_settings = get_option( '$op_text_options', $op_text_options );
@@ -277,7 +283,7 @@ class OpaqueSettingPage{
 	 * @access  public
 	 * @since   0.1.0
 	 */
-	function op_plugin_settings_link( $links ) {
+	public function op_plugin_settings_link( $links ) {
 
 	  $settings_link = "<a href='options-general.php?page=op_settings'>".__('Settings')."</a>";
 	  array_unshift( $links, $settings_link );
@@ -287,9 +293,3 @@ class OpaqueSettingPage{
 	} // end op_plugin_settings_link()
 
 } // end
-
-// Load only if we are viewing an admin page
-if ( is_admin() )
-	$settings = new OpaqueSettingPage();
-
-?>

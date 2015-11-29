@@ -1,5 +1,5 @@
 html{
-	overflow:hidden;
+	overflow: hidden;
 }
 
 /* style browsers that can handle css filters */
@@ -21,15 +21,15 @@ html{
 }
 
 .opcssfilters .cover{
-	opacity:.85;
-	background:#ffffff;
+	opacity: .85;
+	background: #fff;
 }
 
 /* style browsers that can't handle css filters */
 
 .opno-cssfilters .cover{
-	background:#ffffff;
-	opacity:.95;
+	background: #fff;
+	opacity: .95;
 }
 
 .opno-cssfilters body *:not(.clear){
@@ -39,29 +39,29 @@ html{
 /* default styling */
 
 .cover{
-	position:fixed;
-	z-index:1001;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
+	position: fixed;
+	z-index: 1001;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 .landing-page-modal{
-	position:fixed;
-	top:30%;
-	left:50%;
-	margin-left:-400px;
-	width:800px;
-	z-index:2001;
-	text-align:center;
+	position: fixed;
+	top: 30%;
+	left: 50%;
+	margin-left: -400px;
+	width: 800px;
+	z-index: 2001;
+	text-align: center;
 }
 
 .landing-page-modal h1{
-	font-size:3em;
-	color:#000000;
+	font-size: 3em;
+	color: #000;
 }
 
 .landing-page-modal h2{
-	color:#000000;
+	color: #000;
 }

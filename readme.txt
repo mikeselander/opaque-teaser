@@ -3,7 +3,7 @@ Contributors: mikeselander
 Donate link: http://mikeselander.com
 Tags: landing page, under construction, teaser, opaque, coming soon, preview, private
 Requires at least: 3.0
-Tested up to: 3.8
+Tested up to: 4.4
 Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,7 +12,7 @@ Use your template styling to create a semi-transparent teaser overlay.
 
 == Description ==
 
-Opaque Teaser creates a translucent overlay over your current theme to show off your work while blocking the nitty gritty details from your visitors. It will show up only for logged-out users, allowing you to keep editing and working on your website
+Opaque Teaser creates a translucent overlay over your current theme to show off your work while blocking the nitty gritty details from your visitors. It will show up only for logged-out users, allowing you to keep editing and working on your website.
 
 The plugin is simple to configure and uses your existing theme styling. It’s only a few clicks before your site is locked down with a beautiful alternative to the normal landing page.
 
