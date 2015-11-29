@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) OR exit;
 Plugin Name: Opaque Teaser
 Plugin URI: http://www.mikeselander.com/
 Description: Creates a blur overlay on top of your site with landing page or under construction text so that visitors can get a taste of the upcoming site.
-Version: 0.2.0
+Version: 0.2.2
 Author: Mike Selander, Richard Melick
 Author URI: http://www.mikeselander.com/
 License: GPL2
